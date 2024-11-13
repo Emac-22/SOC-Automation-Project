@@ -18,27 +18,73 @@ The primary goal of this project is to set up a comprehensive SOC environment th
 The project utilizes Wazuh for security monitoring, The Hive for incident case management, and Shuffle for automating incident workflows. It focuses on configuring a system to detect, analyze, and respond to suspicious activities in a controlled environment, with specific attention to testing Mimikatz detections and implementing custom response workflows.
 
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
+## Project Overview
+### Architecture Design
+The SOC Automation environment was architected with multiple components interacting seamlessly to facilitate threat detection and response. The architecture diagram (included in the appendix) provides a logical view of the system’s data flow, showing how alerts from monitored endpoints are processed by Wazuh, escalated to The Hive for case management, and routed through Shuffle for automated responses.
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+### Components
+- Windows Client VM: Acts as the monitored endpoint, running Sysmon to generate system-level telemetry.
+- Wazuh Server: Serves as the SIEM platform, collecting logs, analyzing them, and generating alerts based on predefined rules.
+- The Hive: A case management tool where incidents are documented, assigned, and tracked.
+- Shuffle: Automates the response workflows, connecting to Wazuh and The Hive to initiate actions based on alert criteria.
 
-### Tools Used
-[Bullet Points - Remove this afterwards]
+### Components Used
+- Wazuh: An open-source SIEM and extended detection and response (XDR) platform, Wazuh is used for real-time security monitoring, intrusion detection, and data aggregation. It collects logs from the endpoint, detects anomalous behavior, and generates alerts.
+- The Hive: This incident response and case management platform helps organize and track security incidents. It allows analysts to collaborate, manage alerts, and document investigation processes.
+- Shuffle: As a security orchestration, automation, and response (SOAR) platform, Shuffle integrates with Wazuh and The Hive to automate alert-based actions and streamline incident response workflows.
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+### Methodology
+- Designing the Architecture: Planning and diagramming the logical layout of components (Refer to Figure 1).
+- Setting Up Virtual Machines: Establishing VMs for endpoint monitoring and deploying the Wazuh server.
+- Configuring The Hive and Wazuh: Connecting Wazuh to The Hive for seamless alerting and case management (Refer to Figure 2).
+- Generating and Configuring Telemetry: Creating logs with Sysmon on the endpoint and configuring Wazuh to receive and interpret these logs (Refer to Figure 3).
+- Integrating Shuffle for Automation: Building workflows to automate detection and response processes using Shuffle (Refer to Figure 4).
 
-## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
+## Testing and Validation
+### Detecting Mimikatz Activity
+After configuring Sysmon on the endpoint, we ran Mimikatz (a well-known post-exploitation tool) to simulate suspicious activity. Wazuh successfully detected this activity based on predefined rules and triggered an alert, which was routed to The Hive for case creation (Refer to Figure 5).
 
-Example below.
+### Shuffle Workflow Validation
+The Shuffle workflows were tested to verify that, upon receiving a Wazuh alert, they initiated the appropriate actions—logging the incident in The Hive and notifying analysts (Refer to Figure 6).
 
-*Ref 1: Network Diagram*
+## Conclusion
+The SOC Automation Project demonstrates the power of automation in security operations, enabling faster, more accurate incident response. By integrating Wazuh, The Hive, and Shuffle, we created a system that minimizes manual work for analysts and improves response times. Testing confirmed that the automated workflows detect and respond to simulated threats, validating the effectiveness of the system. This project highlights the importance of SOC automation in maintaining a strong cybersecurity posture and offers a template for implementing similar solutions in other environments.
+
+### Key Takeaways
+- SOC automation can significantly reduce response times and improve efficiency
+- Open-source tools like Wazuh, The Hive, and Shuffle provide robust functionality for detecting, managing, and responding to threats.
+- Automation allows SOC analysts to focus on higher-level tasks, improving overall security management.
+
+
+
+## Figures
+
+Figure 1.
+This diagram illustrates the logical layout of the components involved in the SOC Automation project. It
+visualizes the flow of data between key components such as the Windows client, Wazuh manager, The
+Hive, Shuffle, and the SOC analyst. The diagram is essential for understanding the project’s architecture
+and serves as a blueprint for the subsequent setup and integration steps.
+
+
+<img width="330" alt="LS9" src="https://github.com/user-attachments/assets/610909e9-ccdf-4b49-b1e8-296e5aba1eaf">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
