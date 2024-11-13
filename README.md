@@ -6,13 +6,14 @@ posture.
 
 The automation workflows designed in this project enable the SOC to handle threats in realtime, leveraging integration between various components to detect and respond to suspicious activities effectively. This documentation provides a breakdown of the project setup, configuration steps, testing processes, and key insights for anyone looking to build a similar automated SOC environment.
 
+## Introduction
 ### Background
 Security operations centers play a crucial role in protecting organizations from cyber threats, but traditional SOCs often rely heavily on manual processes, leading to delays in threat detection and response. The goal of SOC automation is to reduce response times, minimize human error, and allow security analysts to focus on complex incidents by automating repetitive tasks.
 
-## Objective
+### Objective
 The primary goal of this project is to set up a comprehensive SOC environment that combines detection, case management, and automated response workflows. By implementing a range of open-source tools, this project seeks to demonstrate the benefits of automation in SOC operations, specifically in improving efficiency, accuracy, and overall threat management.
 
-## Scope
+### Scope
 The project utilizes Wazuh for security monitoring, The Hive for incident case management, and Shuffle for automating incident workflows. It focuses on configuring a system to detect, analyze, and respond to suspicious activities in a controlled environment, with specific attention to testing Mimikatz detections and implementing custom response workflows.
 
 
