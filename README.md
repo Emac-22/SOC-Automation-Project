@@ -6,6 +6,7 @@ posture.
 
 The automation workflows designed in this project enable the SOC to handle threats in realtime, leveraging integration between various components to detect and respond to suspicious activities effectively. This documentation provides a breakdown of the project setup, configuration steps, testing processes, and key insights for anyone looking to build a similar automated SOC environment.
 
+
 ## Introduction
 ### Background
 Security operations centers play a crucial role in protecting organizations from cyber threats, but traditional SOCs often rely heavily on manual processes, leading to delays in threat detection and response. The goal of SOC automation is to reduce response times, minimize human error, and allow security analysts to focus on complex incidents by automating repetitive tasks.
