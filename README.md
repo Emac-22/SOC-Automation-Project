@@ -71,6 +71,75 @@ and serves as a blueprint for the subsequent setup and integration steps.
 
 
 
+Figure 2.
+This screenshot displays the Wazuh dashboard showing the droplets created for the Wazuh
+server and TheHive server. The droplets are virtual machines (VMs) that have been set up to host the
+Wazuh and TheHive platforms, which are integral to the SOC Automation project. The configuration of
+these droplets allows for the management and monitoring of security events, enabling effective incident
+response and automation workflows.
+
+
+<img width="929" alt="LS8" src="https://github.com/user-attachments/assets/7508e216-b537-4d1d-9dbb-d2c5b5e8a45a">
+
+
+Figure 3.
+This screenshot shows the execution of the Mimikatz command in PowerShell with
+administrative privileges. Mimikatz is used here to simulate a security event, which is then captured by
+Wazuh for telemetry configuration. The command demonstrates the process of generating test events to
+help validate the functionality of the Wazuh platform’s detection capabilities for specific threats, such as
+credential dumping. This step is crucial in configuring and fine-tuning the telemetry within the SOC
+automation workflow.
+
+
+<img width="450" alt="LS6" src="https://github.com/user-attachments/assets/7db1b387-6294-4c61-82df-0b63d513cdbe">
+
+Figure 4.
+This screenshot showcases the workflow built in Shuffle.io for automating the detection and
+response processes. The workflow integrates Wazuh alerts with The Hive, enabling automated responses
+when a threat is detected. In this case, the workflow specifically handles Mimikatz detection, extracting
+file hashes and checking their reputation on VirusTotal, before sending the data to The Hive for further
+case management. This step demonstrates how Shuffle.io is utilized to streamline incident response and
+automate security processes within the SOC environment.
+
+
+<img width="895" alt="LS2" src="https://github.com/user-attachments/assets/45218820-8f00-4c80-995a-913fa6d23777">
+
+
+Figures 5.
+This screenshot illustrates the alert that was automatically created in The Hive dashboard as
+part of the Shuffle workflow integration. Upon detecting Mimikatz activity on the endpoint—simulated
+by running Mimikatz in PowerShell as part of the test—Wazuh triggered an alert. This alert was then
+routed to The Hive, where a case was automatically generated for further investigation and response.
+This process demonstrates the seamless integration of Wazuh, Shuffle, and The Hive for automated
+incident management in the SOC environment.
+
+
+<img width="954" alt="LS4" src="https://github.com/user-attachments/assets/64624018-31ee-4c9f-b2b7-755a147095db">
+
+
+
+Figure 6.
+This screenshot demonstrates the email notification sent to analysts as part of the Shuffle
+workflow. Upon receiving a Wazuh alert, the Shuffle automation workflow not only logged the incident
+in The Hive but also triggered an email notification to the designated analyst team. This step validates
+the integration of Shuffle in automating response actions, ensuring that analysts are promptly notified of
+security events for faster incident handling and response.
+
+
+<img width="484" alt="LS3" src="https://github.com/user-attachments/assets/00f2cde8-7f75-440b-84ba-056bf3977760">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
