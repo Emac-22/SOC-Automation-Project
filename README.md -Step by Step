@@ -1,3 +1,10 @@
+# SOC-Automation-Project
+
+## Executive Summary
+The SOC Automation Project was developed to create a functional Security Operations Center (SOC) environment capable of automatically detecting, analyzing, and responding to security threats. By integrating open-source tools like Wazuh (SIEM and XDR), The Hive (case management), and Shuffle (SOAR for workflow automation), this project demonstrates how security processes can be streamlined to improve incident response times, reduce manual workload, and ensure a more resilient security
+posture.
+
+
 # Step-by-Step SOC Automation Project Guide
 Step 1: Design the Architecture
 Create a Logical Diagram:
